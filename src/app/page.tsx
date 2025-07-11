@@ -8,7 +8,7 @@ export default function Home() {
         {/* Home Section */}
         <section id="home" className="text-center mt-12">
           <h1 className="text-5xl font-bold">👋 Welcome to My Portfolio</h1>
-          <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg">I'm working on exciting stuff!</p>
+          <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg">I&lsquo;m working on exciting stuff!</p>
         </section>
 
         {/* CV Section */}
