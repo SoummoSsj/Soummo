@@ -16,8 +16,8 @@ export default function Home() {
           <h2 className="text-2xl font-semibold mb-4">📄 My CV</h2>
           <p className="text-sm mb-4">You can view or download my CV using the buttons below:</p>
           <div className="flex gap-4">
-            <a href="/cv/my-cv.pdf" target="_blank" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View CV</a>
-            <a href="/cv/my-cv.pdf" download className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Download CV</a>
+            <a href="/my-cv.pdf" target="_blank" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View CV</a>
+            <a href="/my-cv.pdf" download className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Download CV</a>
           </div>
         </section>
 
