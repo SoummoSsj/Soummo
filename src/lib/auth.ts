@@ -3,10 +3,10 @@ import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import FacebookProvider from "next-auth/providers/facebook";
-import { Prisma } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
 export const authOptions: NextAuthOptions = {
-    adapter: PrismaAdapter(Prisma),
+    adapter: PrismaAdapter(prisma),
     secret: process.env.NEXTAUTH_SECRET,
     session: {
         strategy: "database"
@@ -27,4 +27,13 @@ export const authOptions: NextAuthOptions = {
     pages: {
         signIn:"/signin",
     },
+    callbacks: {
+  async session({ session, user }) {
+    session.user.id = user.id; // attach user ID if needed
+    return session;
+  },
+  async redirect({ url, baseUrl }) {
+    return baseUrl; // always redirect to homepage
+  },
+},
 }; 
