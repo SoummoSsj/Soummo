@@ -10,3 +10,9 @@
   }
 }
 
+/* ✅ No @layer needed */
+@font-face {
+  font-family: "MyFont";
+  src: url("/portfolio/public/Rockybilly.ttf") format("truetype");
+}
+

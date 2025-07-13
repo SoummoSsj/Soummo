@@ -1,12 +1,13 @@
-// src/components/Navbar.tsx
 "use client";
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Navbar() {
+  const { data: session } = useSession(); // moved inside the component
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +20,9 @@ export default function Navbar() {
     setTheme(currentTheme === "dark" ? "light" : "dark");
 
   return (
-    <nav className="flex items-center justify-between max-w-5xl mx-auto px-4 py-4">
-      <div className="text-2xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-        MyPortfolio
+    <nav className="flex items-center justify-between max-w-9xl mx-auto px-4 py-4 bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-900 dark:text-white shadow-md">
+      <div className="text-2xl font-MyFont text-gray-900 dark:text-white tracking-tight">
+        Soummo
       </div>
 
       <ul className="hidden md:flex items-center gap-6 font-medium text-gray-700 dark:text-gray-200 text-sm">
@@ -43,6 +44,22 @@ export default function Navbar() {
             <Moon className="w-5 h-5 text-gray-800" />
           )}
         </button>
+
+        {session ? (
+          <button
+            onClick={() => signOut()}
+            className="p-2 text-sm rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            Sign Out
+          </button>
+        ) : (
+          <button
+            onClick={() => signIn()}
+            className="p-2 text-sm rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            Sign In
+          </button>
+        )}
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}

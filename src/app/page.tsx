@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="p-6 font-inter text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-oklch-dark min-h-screen">
+      <main className="p-6 font-inter text-gray-800 dark:text-gray-100 bg-gray-50 dark:bg-neutral-800 min-h-screen">
         {/* Home Section */}
         <section id="home" className="text-center mt-12">
           <h1 className="text-5xl font-bold">👋 Welcome to My Portfolio</h1>
@@ -12,10 +12,10 @@ export default function Home() {
         </section>
 
         {/* CV Section */}
-        <section id="cv" className="mt-20 max-w-3xl mx-auto bg-white dark:bg-gray-800 p-6 rounded shadow">
-          <h2 className="text-2xl font-semibold mb-4">📄 My CV</h2>
-          <p className="text-sm mb-4">You can view or download my CV using the buttons below:</p>
-          <div className="flex gap-4">
+        <section id="cv" className="mt-20 max-w-2xl mx-auto bg-neutral-200 dark:bg-gray-800 p-6  rounded-3xl shadow-2xl">
+          <h2 className="text-2xl text-center font-semibold mb-4">📄 My CV</h2>
+          <p className="text-sm text-center mb-4">You can view or download my CV using the buttons below:</p>
+          <div className="flex justify-center gap-4">
             <a href="/my-cv.pdf" target="_blank" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View CV</a>
             <a href="/my-cv.pdf" download className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Download CV</a>
           </div>
